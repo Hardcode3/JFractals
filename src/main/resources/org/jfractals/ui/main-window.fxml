@@ -22,11 +22,13 @@
                 <Menu text="_View">
                     <items>
                         <MenuItem text="Reset View" onAction="#resetView" />
-                        <CheckMenuItem fx:id="showScaleMenuItem" text="Show Scale" selected="true" />
-                        <CheckMenuItem fx:id="showInfoLabel" text="Show Infos" selected="true" />
-                        <CheckMenuItem fx:id="showZoomMenuItem" text="Show Zoom" selected="true" />
-                        <CheckMenuItem fx:id="showCenterCoordinatesMenuItem" text="Show Center Coordinates" selected="true" />
-                        <CheckMenuItem fx:id="showAxesMenuItem" text="Show Axes" selected="true" />
+                        <Menu text="Overlay">
+                            <CheckMenuItem fx:id="showScaleMenuItem" text="Show Scale" selected="true" />
+                            <CheckMenuItem fx:id="showInfoLabel" text="Show Infos" selected="true" />
+                            <CheckMenuItem fx:id="showZoomMenuItem" text="Show Zoom" selected="true" />
+                            <CheckMenuItem fx:id="showCenterCoordinatesMenuItem" text="Show Center Coordinates" selected="true" />
+                            <CheckMenuItem fx:id="showAxesMenuItem" text="Show Axes" selected="true" />
+                        </Menu>
                     </items>
                 </Menu>
             </menus>
