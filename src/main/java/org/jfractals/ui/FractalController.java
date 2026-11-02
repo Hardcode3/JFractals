@@ -81,7 +81,9 @@ public final class FractalController implements AutoCloseable {
 
     void setViewOptions(ViewOptions viewOptions) {
         scaleBar.visibleProperty().bind(viewOptions.getShowScaleProperty());
-        infoLabel.visibleProperty().bind(viewOptions.getShowCenterCoordinatesProperty());
+        infoLabel.visibleProperty().bind(viewOptions.getShowInfoLabelProperty());
+        infoLabel.getShowCenterCoordinatesProperty().bind(viewOptions.getShowCenterCoordinatesProperty());
+        infoLabel.getShowZoomProperty().bind(viewOptions.getShowZoomProperty());
         axisOverlay.visibleProperty().bind(viewOptions.getShowAxesProperty());
     }
 
