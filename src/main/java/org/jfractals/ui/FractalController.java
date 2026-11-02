@@ -75,10 +75,14 @@ public final class FractalController implements AutoCloseable {
         render();
     }
 
+    public void showSettings() {
+        settingsWindow.show(fractalPane.getScene().getWindow(), settings);
+    }
+
     private void handleKeyPressed(KeyEvent event) {
         switch (event.getCode()) {
             case R -> resetView();
-            case S -> settingsWindow.show(fractalPane.getScene().getWindow(), settings);
+            case S -> showSettings();
             default -> { return; }
         }
         event.consume();
@@ -99,7 +103,7 @@ public final class FractalController implements AutoCloseable {
         render();
     }
 
-    private void resetView() {
+    public void resetView() {
         viewport = viewport.reset();
         resetPan();
         render();

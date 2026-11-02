@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import org.jfractals.ui.FractalController;
+import org.jfractals.ui.MainWindowController;
 
 /** Creates and owns the primary application window. */
 public final class JFractalsApplication extends Application {
@@ -15,26 +16,26 @@ public final class JFractalsApplication extends Application {
     private static final double INITIAL_WIN_HEIGHT_PX = 480;
     private static final String WIN_TITLE = "JFractals";
 
-    private FractalController fractalController;
+    private MainWindowController mainWindowController;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        URL resource = getClass().getResource("/org/jfractals/ui/fractal-view.fxml");
+        URL resource = getClass().getResource("/org/jfractals/ui/main-window.fxml");
         FXMLLoader loader = new FXMLLoader(resource);
         Parent root = loader.load();
-        fractalController = loader.getController();
+        mainWindowController = loader.getController();
 
         primaryStage.setTitle(WIN_TITLE);
         Scene scene = new Scene(root, INITIAL_WIN_WIDTH_PX, INITIAL_WIN_HEIGHT_PX);
         primaryStage.setScene(scene);
-        primaryStage.setOnShown(_ -> fractalController.onViewReady(scene));
+        primaryStage.setOnShown(_ -> mainWindowController.onViewReady(scene));
         primaryStage.show();
     }
 
     @Override
     public void stop() {
-        if (fractalController != null) {
-            fractalController.close();
+        if (mainWindowController != null) {
+            mainWindowController.close();
         }
     }
 }

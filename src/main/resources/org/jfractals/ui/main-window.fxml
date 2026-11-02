@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+
+<BorderPane
+    fx:controller="org.jfractals.ui.MainWindowController"
+    xmlns:fx="http://javafx.com/fxml"
+    stylesheets="@main-window-menu-bar.css">
+
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="_Fractal">
+                    <items>
+                        <MenuItem text="Settings..." onAction="#showSettings" />
+                    </items>
+                </Menu>
+                <Menu text="_View">
+                    <items>
+                        <MenuItem text="Reset View" onAction="#resetView" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <fx:include fx:id="fractalView" source="fractal-view.fxml" />
+    </center>
+</BorderPane>

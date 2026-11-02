@@ -1,0 +1,69 @@
+.menu-bar {
+    -fx-background-color: #22252a;
+    -fx-padding: 4 8 4 8;
+    -fx-border-color: transparent transparent #3b4048 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.menu-bar .container {
+    -fx-spacing: 3;
+}
+
+.menu-bar .menu-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 4;
+    -fx-padding: 6 10 6 10;
+}
+
+.menu-bar .menu-button > .label {
+    -fx-text-fill: #e8eaed;
+    -fx-font-size: 13px;
+}
+
+.menu-bar .menu-button:hover,
+.menu-bar .menu-button:focused,
+.menu-bar .menu-button:showing {
+    -fx-background-color: #363b43;
+}
+
+.context-menu {
+    -fx-background-color: #25282d;
+    -fx-padding: 5;
+    -fx-background-radius: 6;
+    -fx-border-color: #41464f;
+    -fx-border-radius: 6;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.28), 12, 0, 0, 4);
+}
+
+.menu-item {
+    -fx-background-color: transparent;
+    -fx-background-radius: 4;
+    -fx-padding: 7 12 7 12;
+}
+
+.menu-item .label {
+    -fx-text-fill: #e8eaed;
+    -fx-font-size: 13px;
+}
+
+.menu-item:focused {
+    -fx-background-color: #3a414a;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: white;
+}
+
+.menu-item:disabled .label {
+    -fx-text-fill: #858b94;
+}
+
+.menu-item .accelerator-text {
+    -fx-text-fill: #9da4ae;
+}
+
+.separator-menu-item .line {
+    -fx-border-color: #41464f;
+    -fx-border-insets: 4 0 4 0;
+}
