@@ -8,12 +8,14 @@ public class MainWindowController {
     private final ViewOptions viewOptions = new ViewOptions();
     @FXML private FractalController fractalViewController;
     @FXML private CheckMenuItem showScaleMenuItem;
-    @FXML private CheckMenuItem showCenterCoordinates;
+    @FXML private CheckMenuItem showCenterCoordinatesMenuItem;
+    @FXML private CheckMenuItem showAxesMenuItem;
 
     @FXML
     private void initialize() {
         showScaleMenuItem.selectedProperty().bindBidirectional(viewOptions.getShowScaleProperty());
-        showCenterCoordinates.selectedProperty().bindBidirectional(viewOptions.getShowCenterCoordinates());
+        showCenterCoordinatesMenuItem.selectedProperty().bindBidirectional(viewOptions.getShowCenterCoordinatesProperty());
+        showAxesMenuItem.selectedProperty().bindBidirectional(viewOptions.getShowAxesProperty());
         fractalViewController.setViewOptions(viewOptions);
     }
 
