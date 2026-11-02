@@ -79,6 +79,10 @@ public final class FractalController implements AutoCloseable {
         settingsWindow.show(fractalPane.getScene().getWindow(), settings);
     }
 
+    void setViewOptions(ViewOptions viewOptions) {
+        scaleBar.visibleProperty().bind(viewOptions.getShowScaleProperty());
+    }
+
     private void handleKeyPressed(KeyEvent event) {
         switch (event.getCode()) {
             case R -> resetView();
