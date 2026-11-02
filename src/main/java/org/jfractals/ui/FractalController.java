@@ -81,6 +81,7 @@ public final class FractalController implements AutoCloseable {
 
     void setViewOptions(ViewOptions viewOptions) {
         scaleBar.visibleProperty().bind(viewOptions.getShowScaleProperty());
+        infoLabel.visibleProperty().bind(viewOptions.getShowCenterCoordinates());
     }
 
     private void handleKeyPressed(KeyEvent event) {

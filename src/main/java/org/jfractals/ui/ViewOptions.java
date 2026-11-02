@@ -5,14 +5,12 @@ import javafx.beans.property.SimpleBooleanProperty;
 
 public final class ViewOptions {
     private final BooleanProperty showScale = new SimpleBooleanProperty(this, "showScale", true);
+    private final BooleanProperty showCenterCoordinates = new SimpleBooleanProperty(this, "showInfoLabel", true);
 
-    public boolean getShowScale() {
-        return showScale.get();
-    }
-    public void setShowScale(boolean showScale) {
-        this.showScale.set(showScale);
-    }
     public BooleanProperty getShowScaleProperty() {
         return showScale;
+    }
+    public BooleanProperty getShowCenterCoordinates() {
+        return showCenterCoordinates;
     }
 }

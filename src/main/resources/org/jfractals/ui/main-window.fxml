@@ -23,6 +23,7 @@
                     <items>
                         <MenuItem text="Reset View" onAction="#resetView" />
                         <CheckMenuItem fx:id="showScaleMenuItem" text="Show Scale" selected="true" />
+                        <CheckMenuItem fx:id="showCenterCoordinates" text="Show center coordinates" selected="true" />
                     </items>
                 </Menu>
             </menus>
