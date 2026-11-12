@@ -4,10 +4,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
-import org.jfractals.ui.FractalController;
 import org.jfractals.ui.MainWindowController;
 
 /** Creates and owns the primary application window. */
@@ -29,6 +29,11 @@ public final class JFractalsApplication extends Application {
         Scene scene = new Scene(root, INITIAL_WIN_WIDTH_PX, INITIAL_WIN_HEIGHT_PX);
         primaryStage.setScene(scene);
         primaryStage.setOnShown(_ -> mainWindowController.onViewReady(scene));
+
+        URL logo = getClass().getResource("/org/jfractals/ui/logo_mandelbrot.png");
+        if (logo != null) {
+            primaryStage.getIcons().add(new Image(logo.toExternalForm()));
+        }
         primaryStage.show();
     }
 
