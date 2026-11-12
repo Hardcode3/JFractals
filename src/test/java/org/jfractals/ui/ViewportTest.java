@@ -52,10 +52,10 @@ public class ViewportTest {
             "0, 0", // Screen origin
             "799, 799", // Near bottom right extremity
             "800, 800", // At bottom right extremity
-            "500, 400, 1.5", // Bottom right quarter
-            "243, 398, 1.5", // Bottom left quarter
-            "100, 230, 1.5", // Top left quarter
-            "675, 187, 1.5", // Top right quarter
+            "500, 400", // Bottom right quarter
+            "243, 398", // Bottom left quarter
+            "100, 230", // Top left quarter
+            "675, 187", // Top right quarter
             "-123, 473", // Out of bounds with negative x
             "230, -564", // Out of bounds with negative y
             "1920, 1080", // Out of bounds with positive x and y
