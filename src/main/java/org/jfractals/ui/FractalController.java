@@ -137,7 +137,6 @@ public final class FractalController implements AutoCloseable {
     }
 
     private void render() {
-        if (viewport.isInitial()) return;
         Viewport vp = viewport;
         infoLabel.update(vp);
         scaleBar.update(vp);
