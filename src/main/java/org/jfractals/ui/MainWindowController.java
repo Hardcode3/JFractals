@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckMenuItem;
 
 public class MainWindowController {
+    private final FractalExportDialog exportDialog = new FractalExportDialog();
     private final ViewOptions viewOptions = new ViewOptions();
     @FXML private FractalController fractalViewController;
     @FXML private CheckMenuItem showScaleMenuItem;
@@ -29,6 +30,10 @@ public class MainWindowController {
 
     @FXML private void showSettings() {
         fractalViewController.showSettings();
+    }
+
+    @FXML private void showExportDialog() {
+        exportDialog.show();
     }
 
     public void onViewReady(Scene scene) {
