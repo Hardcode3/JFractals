@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.jfractals.ui.FractalExportDialogController"
+      spacing="12" prefWidth="360" minWidth="320">
+    <padding><Insets top="18" right="20" bottom="18" left="20"/></padding>
+
+    <GridPane hgap="12" vgap="10">
+      <TextField fx:id="exportPathTextField" text="none" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+      <Button text="Browse" GridPane.rowIndex="0" GridPane.columnIndex="1" onAction="#onBrowseClicked"/>
+
+      <Label text="Image width (in pixels)" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+      <TextField text="1920" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+      <Label text="Image height (in pixels)" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+      <TextField text="1080" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+      <Label text="Aspect Ratio" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+      <TextField text="16" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+      <Label text="by" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+      <TextField text="9" GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+
+      <Label text="Export may take a while..." textFill="#666666" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+      <Button text="Export" GridPane.rowIndex="4" GridPane.columnIndex="3" />
+    </GridPane>
+</VBox>

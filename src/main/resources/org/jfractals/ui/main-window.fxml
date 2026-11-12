@@ -17,6 +17,7 @@
                 <Menu text="_Fractal">
                     <items>
                         <MenuItem text="Settings..." onAction="#showSettings" />
+                        <MenuItem text="Export..." onAction="#showExportDialog" />
                     </items>
                 </Menu>
                 <Menu text="_View">
