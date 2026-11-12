@@ -1,1 +1,0 @@
-Mandelbrot and Julia calculations
