@@ -15,6 +15,7 @@ public class FractalExportDialog implements AutoCloseable {
     void show() {
         if (stage != null && stage.isShowing()) {
             stage.toFront();
+            return;
         }
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FractalExportDialog.fxml"));
@@ -22,6 +23,7 @@ public class FractalExportDialog implements AutoCloseable {
 
             stage = new Stage();
             stage.setTitle(WIN_TITLE);
+            stage.setResizable(false);
             stage.setScene(new Scene(content));
             stage.setOnHidden(_ -> stage = null);
             stage.show();

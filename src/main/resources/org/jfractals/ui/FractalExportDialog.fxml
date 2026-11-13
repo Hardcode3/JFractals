@@ -7,25 +7,51 @@
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="org.jfractals.ui.FractalExportDialogController"
-      spacing="12" prefWidth="360" minWidth="320">
-    <padding><Insets top="18" right="20" bottom="18" left="20"/></padding>
+      spacing="16"
+      prefWidth="400">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
 
-    <GridPane hgap="12" vgap="10">
-      <TextField fx:id="exportPathTextField" text="none" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-      <Button text="Browse" GridPane.rowIndex="0" GridPane.columnIndex="1" onAction="#onBrowseClicked"/>
+    <!-- File Selection Section -->
+    <VBox spacing="6">
+        <Label text="Export Location" style="-fx-font-weight: bold;"/>
+        <HBox spacing="8" alignment="CENTER_LEFT">
+            <TextField fx:id="exportPathTextField" text="Select a file to save to..." HBox.hgrow="ALWAYS"/>
+            <Button text="Browse..." onAction="#onBrowseClicked" minWidth="80"/>
+        </HBox>
+    </VBox>
 
-      <Label text="Image width (in pixels)" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-      <TextField text="1920" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Separator/>
 
-      <Label text="Image height (in pixels)" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-      <TextField text="1080" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    <!-- Parameters Form -->
+    <GridPane hgap="12" vgap="12">
+        <columnConstraints>
+            <ColumnConstraints minWidth="130"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
 
-      <Label text="Aspect Ratio" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-      <TextField text="16" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
-      <Label text="by" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
-      <TextField text="9" GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+        <!-- Width -->
+        <Label text="Image width (px)" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="widthTextField" text="1920" alignment="CENTER" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
-      <Label text="Export may take a while..." textFill="#666666" GridPane.rowIndex="4" GridPane.columnIndex="0" />
-      <Button text="Export" GridPane.rowIndex="4" GridPane.columnIndex="3" />
+        <!-- Height -->
+        <Label text="Image height (px)" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="heightTextField" text="1080" alignment="CENTER" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <!-- Aspect Ratio -->
+        <Label text="Aspect Ratio" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <HBox spacing="8" alignment="CENTER_LEFT" GridPane.rowIndex="2" GridPane.columnIndex="1">
+            <TextField fx:id="aspectRatioWidthTextField" text="16" HBox.hgrow="ALWAYS" alignment="CENTER"/>
+            <Label text="by"/>
+            <TextField fx:id="aspectRatioHeightTextField" text="9" HBox.hgrow="ALWAYS" alignment="CENTER"/>
+        </HBox>
     </GridPane>
+
+    <Separator/>
+
+    <!-- Bottom Action Bar -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Export may take a while..." textFill="#666666"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Export" defaultButton="true" minWidth="90" onAction="#onExportClicked"/>
+    </HBox>
 </VBox>

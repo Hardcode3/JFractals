@@ -8,11 +8,13 @@ import javafx.stage.FileChooser;
 
 public class FractalExportDialogController {
     @FXML private TextField exportPathTextField;
+    @FXML private TextField widthTextField;
+    @FXML private TextField heightTextField;
+    @FXML private TextField aspectRatioWidthTextField;
+    @FXML private TextField aspectRatioHeightTextField;
 
     @FXML
-    private void initialize() {
-
-    }
+    private void initialize() { }
 
     @FXML
     private void onBrowseClicked() {
@@ -23,6 +25,16 @@ public class FractalExportDialogController {
         File selectedFile = fchooser.showSaveDialog(null);
         if (selectedFile != null) {
             exportPathTextField.setText(selectedFile.getAbsolutePath());
+        }
+    }
+
+    @FXML void onExportClicked() {
+        String exportPath = exportPathTextField.getText();
+        if (exportPath != null && !exportPath.isEmpty()) {
+            // TODO: Implement the actual export logic here
+            System.out.println("Exporting fractal to: " + exportPath);
+        } else {
+            System.out.println("Export path is empty.");
         }
     }
 }
