@@ -31,18 +31,18 @@
 
         <!-- Width -->
         <Label text="Image width (px)" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-        <TextField fx:id="widthTextField" text="1920" alignment="CENTER" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Spinner fx:id="widthSpinner" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
         <!-- Height -->
         <Label text="Image height (px)" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-        <TextField fx:id="heightTextField" text="1080" alignment="CENTER" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Spinner fx:id="heightSpinner" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
         <!-- Aspect Ratio -->
         <Label text="Aspect Ratio" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
         <HBox spacing="8" alignment="CENTER_LEFT" GridPane.rowIndex="2" GridPane.columnIndex="1">
-            <TextField fx:id="aspectRatioWidthTextField" text="16" HBox.hgrow="ALWAYS" alignment="CENTER"/>
+            <Spinner fx:id="aspectRatioWidthSpinner" HBox.hgrow="ALWAYS"/>
             <Label text="by"/>
-            <TextField fx:id="aspectRatioHeightTextField" text="9" HBox.hgrow="ALWAYS" alignment="CENTER"/>
+            <Spinner fx:id="aspectRatioHeightSpinner" HBox.hgrow="ALWAYS"/>
         </HBox>
     </GridPane>
 
